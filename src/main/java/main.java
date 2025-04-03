@@ -19,17 +19,28 @@ public class main {
 
             switch (choice) {
                 case 1:
-                    System.out.print("Enter task: ");
-                    String task = scanner.nextLine();
-                    manager.addTask(task);
+                    System.out.print("Enter title: ");
+                    String title = scanner.nextLine();
+                    System.out.print("Enter description: ");
+                    String description = scanner.nextLine();
+                    System.out.print("Is task complete: ");
+                    Boolean status = Boolean.valueOf(scanner.nextLine());
+                    manager.addTask(new Task(title,description,status));
                     break;
                 case 2:
-                    System.out.println("Tasks: " + manager.listTasks());
+//                    System.out.println("Tasks: " + manager.listTasks());
+                    manager.listTasks();
                     break;
                 case 3:
                     System.out.print("Enter task to delete: ");
-                    String tas = scanner.nextLine();
-                    manager.deleteTask(tas);
+                    System.out.print("Enter title: ");
+                    String title1 = scanner.nextLine();
+                    System.out.print("Enter description: ");
+                    String description1 = scanner.nextLine();
+                    System.out.print("Is task complete: ");
+                    Boolean status1 = Boolean.valueOf(scanner.nextLine());
+                    String task = scanner.nextLine();
+                    manager.deleteTask(new Task(title1,description1,status1));
                     System.out.println("Deleting...");
                     break;
                 case 4:
